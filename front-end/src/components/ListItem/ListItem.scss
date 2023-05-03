@@ -1,0 +1,84 @@
+.listItem {
+    // width: 100%;
+    height: 350px;
+    font-family: Montserrat, sans-serif;
+    background-color: var(--main-color);
+    margin-right: 10px;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: inset 0px -2px 11px 1px rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0px -2px 11px 1px rgba(255, 255, 255, 0.07);
+    .imgItem {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    &:hover {
+        // width: 280px;
+        position: static;
+        transition: all 0.5s ease-in-out;
+    }
+    .imgItemSub {
+        height: 140px;
+        width: 100%;
+        object-fit: cover;
+        &:hover {
+            opacity: 0.7;
+            transition: all 0.25s ease;
+        }
+    }
+    .itemInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            // margin-bottom: 10px;
+            padding: 0 10px;
+            .icon {
+                padding: 5px;
+                border: 2px solid white;
+                border-radius: 50%;
+                margin-right: 10px;
+                font-size: 20px;
+                cursor: pointer;
+                &:first-child {
+                    color: #fff;
+                    background-color: red;
+                    border-color: transparent;
+                    border-radius: 20px;
+                    width: 50px;
+                    transition: all 0.25s linear;
+                    &:hover {
+                        background-color: rgb(252, 131, 131);
+                    }
+                }
+            }
+        }
+        .itemInfoTop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(210, 209, 209);
+            .country {
+                margin-top: 10px;
+                display: block;
+                float: right;
+            }
+        }
+        .title {
+            // margin-top: 8px;
+            font-size: 22px;
+            // line-height: 30px;
+            text-transform: uppercase;
+            color: red;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,189 @@
+@import "../../App.scss";
+.navbar {
+    color: #fff;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+    transition: all 0.25s;
+    &.scrolled {
+        background-color: var(--main-color);
+    }
+    .container {
+        height: 70px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            @include mobile {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            width: 54%;
+            justify-content: space-around;
+            img {
+                height: 25px;
+                margin-right: 20px;
+            }
+            .genres {
+                position: relative;
+                &:hover ul {
+                    visibility: visible;
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                ul {
+                    visibility: hidden;
+                    max-width: 300px;
+                    min-width: 150px;
+                    background-color: black;
+                    border-radius: 2px;
+                    padding: 10px;
+                    position: absolute;
+                    list-style: none;
+                    transform: translateY(100px);
+                    transition: all 0.15s linear;
+                    opacity: 0;
+                    box-shadow: 0 3px 10px rgb(255 255 255 / 0.3);
+                    li {
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+                        line-height: 20px;
+                        a {
+                            display: block;
+                            width: 100%;
+                            color: white;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            color: red;
+                            transition: all 0.25s linear;
+                            text-decoration: underline;
+                        }
+                    }
+                    li:hover {
+                        transition: all 0.25s linear;
+                        color: red;
+                    }
+                }
+            }
+            .link {
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            span {
+                cursor: pointer;
+                transition: all 0.25s linear;
+                @include tablet {
+                    display: none;
+                }
+                &.navbarmainLinks {
+                    @include tablet {
+                        display: block;
+                    }
+                }
+                &:hover {
+                    color: red;
+                }
+            }
+            .active {
+                font-weight: bold;
+                color: red;
+                position: relative;
+            }
+            .active::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 2px;
+                bottom: -4px;
+                background-color: red;
+                animation: show 0.3s linear;
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .kid {
+                margin-left: 15px;
+                @include mobile {
+                    display: none;
+                }
+            }
+            .search {
+                display: flex;
+                align-items: center;
+                .form-input {
+                    border: 1px solid red;
+                    border-radius: 16px;
+                    font-size: 16px;
+                    padding-left: 12px;
+                    &::placeholder {
+                        color: white;
+                        font-family: Montserrat, sans-serif;
+                        font-size: 14px;
+                    }
+                    color: white;
+                    height: 30px;
+                    width: 100%;
+                    outline: none;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+                .icon:hover {
+                    color: red;
+                    transition: all 0.25s linear;
+                }
+            }
+            img {
+                height: 30px;
+                width: 30px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+                margin-left: 15px;
+            }
+            .icon {
+                margin-left: 15px;
+                cursor: pointer;
+            }
+
+            .profile {
+                .options {
+                    width: 90px;
+                    display: none;
+                    background-color: var(--main-color);
+                    border-radius: 5px;
+                    overflow: hidden;
+                }
+                span {
+                    display: block;
+                    padding: 8px 16px;
+                    cursor: pointer;
+                    transition: all 0.25s linear;
+                }
+                &:hover {
+                    .options {
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        right: 20px;
+                        span:hover {
+                            background-color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
